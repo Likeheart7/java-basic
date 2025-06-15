@@ -35,5 +35,15 @@ public class DiveInString {
         System.out.println(s4); // 被修改
         String s5 = "abc";
         System.out.println(s5);
+
+        derive();
+    }
+
+    private static void derive() {
+        System.out.println("<<<=====>>>");
+        String s1 = new String("3") + new String("3");
+        s1.intern(); // 放入常量池
+        String s2 = "33";
+        System.out.println(s2 == s1); // true，因为s2实际上拿了s1.intern()放入常量池的s1实例
     }
 }
